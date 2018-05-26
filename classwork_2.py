@@ -18,7 +18,7 @@ args = parser.parse_args()
 
 
 with open(args.output_file, "w") as out_handle:
-    for record in SeqIO.parse("args.input_file", format="fasta"):
+    for record in SeqIO.parse(args.input_file, format="fasta"):
 
         result_handle = NCBIWWW.qblast("blastn", "nt", record.seq,hitlist_size=1, descriptions=1,alignments=1)
 
